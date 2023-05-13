@@ -1,10 +1,10 @@
 export const oktaConfig = {
 
-    clientId: '0oa9e5mew3ItpDbRV5d7',
+    clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
 
-    issuer: 'https://dev-46143953.okta.com/oauth2/default',
+    issuer: process.env.REACT_APP_OKTA_ISSUER,
     
-    redirectUri: 'http://localhost:3000/login/callback',
+    redirectUri: process.env.REACT_APP_OKTA_REDIRECT_URI,
     
     scopes: ['openid', 'profile', 'email'],
     
