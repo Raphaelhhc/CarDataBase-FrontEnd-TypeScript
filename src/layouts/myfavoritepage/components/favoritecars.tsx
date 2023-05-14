@@ -19,7 +19,7 @@ export const FavoriteCars = () => {
 
             if (authState && authState.isAuthenticated) {
 
-                const url = `http://localhost:8080/api/secure/cars/currentfavorite`;
+                const url = `${process.env.REACT_APP_API}/secure/cars/currentfavorite`;
 
                 const requestOptions = {
                     method: 'GET',

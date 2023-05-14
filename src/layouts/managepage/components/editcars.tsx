@@ -19,7 +19,7 @@ export const EditCars = () => {
     useEffect(() => {
         const fetchCars = async () => {
 
-            const baseUrl: string = `http://localhost:8080/api/cars?page=${currentPage - 1}&size=${carsPerPage}`;
+            const baseUrl: string = `${process.env.REACT_APP_API}/cars?page=${currentPage - 1}&size=${carsPerPage}`;
 
             const response = await fetch(baseUrl);
 

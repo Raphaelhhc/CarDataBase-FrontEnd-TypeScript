@@ -48,7 +48,7 @@ export const AddNewCar = () => {
     // Create new car to database
     async function submitNewCar() {
 
-        const url = `http://localhost:8080/api/secure/admin/add/car`;
+        const url = `${process.env.REACT_APP_API}/secure/admin/add/car`;
 
         if (
             authState?.isAuthenticated &&

@@ -47,7 +47,7 @@ export const EditCarInfo: React.FC<{ car: CarModel, deleteCar: any }> = (props, 
     // Update car info to database
     async function submitEditCar() {
 
-        const url = `http://localhost:8080/api/secure/admin/update/car?carId=${props.car?.id}`;
+        const url = `${process.env.REACT_APP_API}/secure/admin/update/car?carId=${props.car?.id}`;
 
         if (
             authState?.isAuthenticated &&
@@ -114,7 +114,7 @@ export const EditCarInfo: React.FC<{ car: CarModel, deleteCar: any }> = (props, 
     // Delete car from database
     async function deleteCar() {
 
-        const url = `http://localhost:8080/api/secure/admin/delete/car?carId=${props.car?.id}`;
+        const url = `${process.env.REACT_APP_API}/secure/admin/delete/car?carId=${props.car?.id}`;
         
         const requestOptions = {
             method: 'DELETE',

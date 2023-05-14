@@ -39,7 +39,7 @@ export const DetailPage = () => {
 
         const fetchCar = async () => {
 
-            const baseUrl: string = `http://localhost:8080/api/cars/${carId}`;
+            const baseUrl: string = `${process.env.REACT_APP_API}/cars/${carId}`;
             const response = await fetch(baseUrl);
 
             if (!response.ok) {
@@ -84,7 +84,7 @@ export const DetailPage = () => {
 
         const fetchCarReviews = async () => {
 
-            const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByCarId?carId=${carId}`;
+            const reviewUrl: string = `${process.env.REACT_APP_API}/reviews/search/findByCarId?carId=${carId}`;
             const responseReviews = await fetch(reviewUrl);
 
             if (!responseReviews.ok) {
@@ -139,7 +139,7 @@ export const DetailPage = () => {
 
             if (authState && authState.isAuthenticated) {
 
-                const url = `http://localhost:8080/api/secure/reviews/user/car?carId=${carId}`;
+                const url = `${process.env.REACT_APP_API}/secure/reviews/user/car?carId=${carId}`;
 
                 const requestOptions = {
                     method: 'GET',
@@ -180,7 +180,7 @@ export const DetailPage = () => {
 
             if (authState && authState.isAuthenticated) {
 
-                const url = `http://localhost:8080/api/secure/cars/isfavorite/byuser?carId=${carId}`;
+                const url = `${process.env.REACT_APP_API}/secure/cars/isfavorite/byuser?carId=${carId}`;
 
                 const requestOptions = {
                     method: 'GET',
@@ -240,7 +240,7 @@ export const DetailPage = () => {
     // Add the car to my favorite list
     async function addToMyFavorite() {
 
-        const url = `http://localhost:8080/api/secure/cars/favorite?carId=${car?.id}`;
+        const url = `${process.env.REACT_APP_API}/secure/cars/favorite?carId=${car?.id}`;
 
         const requestOptions = {
             method: 'PUT',
@@ -262,7 +262,7 @@ export const DetailPage = () => {
     // Remove the car from my favorite list
     async function removeMyFavorite() {
 
-        const url = `http://localhost:8080/api/secure/cars/removefavorite?carId=${car?.id}`;
+        const url = `${process.env.REACT_APP_API}/secure/cars/removefavorite?carId=${car?.id}`;
 
         const requestOptions = {
             method: 'PUT',
@@ -290,7 +290,7 @@ export const DetailPage = () => {
         }
         const reviewRequestModel = new ReviewRequestModel(starInput, carId, reviewDescription);
 
-        const url = 'http://localhost:8080/api/secure/reviews';
+        const url = `${process.env.REACT_APP_API}/secure/reviews`;
 
         const requestOptions = {
             method: 'POST',

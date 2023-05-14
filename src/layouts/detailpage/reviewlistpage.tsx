@@ -23,7 +23,7 @@ export const ReviewListPage = () => {
 
         const fetchCarReviews = async () => {
 
-            const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByCarId?carId=${carId}&page=${currentPage-1}&size=${reviewsPerPage}`;
+            const reviewUrl: string = `${process.env.REACT_APP_API}/reviews/search/findByCarId?carId=${carId}&page=${currentPage-1}&size=${reviewsPerPage}`;
             const responseReviews = await fetch(reviewUrl);
 
             if (!responseReviews.ok) {

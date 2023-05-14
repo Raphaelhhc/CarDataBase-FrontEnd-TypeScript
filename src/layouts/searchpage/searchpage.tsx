@@ -20,7 +20,7 @@ export const SearchPage = () => {
     useEffect(() => {
         const fetchCars = async () => {
 
-            const baseUrl: string = "http://localhost:8080/api/cars";
+            const baseUrl: string = `${process.env.REACT_APP_API}/cars`;
             let url: string = '';
             if (searchUrl === '') {
                 url = `${baseUrl}?page=${currentPage - 1}&size=${carsPerPage}`;
