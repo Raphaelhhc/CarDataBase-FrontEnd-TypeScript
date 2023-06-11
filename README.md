@@ -1,46 +1,96 @@
-# Getting Started with Create React App
+# Car Database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Web application of providing car informations using React and Spring Boot.
 
-## Available Scripts
+This is project's front-end repository. For back-end repository go to [https://github.com/Raphaelhhc/CarDataBase-Backend-SpringBoot](https://github.com/Raphaelhhc/CarDataBase-Backend-SpringBoot)
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+[https://web-cardatabase-react.onrender.com](https://web-cardatabase-react.onrender.com)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Visitor authority: Can only view cars' specification/rating/review. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+User(need login) authority: Can add car to favorite list and leave rating/review.
 
-### `npm test`
+Admin(need login) authority: Can add/edit/delete car data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Demo Account
 
-### `npm run build`
+User
+ - Username: ```man1@email.com```
+ - Password: ```boss8055```
+ 
+Admin
+ - Username: ```adminman@email.com```
+ - Password: ```boss8055```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application uses following technologies (Front-End/Back-End both included):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Typescript: Programming Language (complies to plain JavaScript)
+- Java: Programming Language
+- React: JavaScript library for building user interfaces
+- Spring Boot: Java-based framework for building REST API
+- MySQL on AWS RDS: Relational database built on AWS
+- Okta: Secure identity management platform for user authentication and authorization
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- User authentication: Login/Logout
+- User Roles: Visitor/User/Admin
+- View car specification/rating/review
+- Search car in list by word
+- Filter car list by body style
+- Create/Update/Delete car data
+- Leave user rating/review of each car
+- Add/Remove car to/from user's favorite list
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Start the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 1. Clone the repository
+```
+git clone https://github.com/Raphaelhhc/CarDataBase-FrontEnd-TypeScript
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 2. Change into the project directory
+```
+cd CarDataBase-FrontEnd-TypeScript
+```
 
-## Learn More
+### 3. Install the project dependencies
+```
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Set environmental variables
+```
+REACT_APP_OKTA_CLIENT_ID= <Enter your Okta client ID>
+REACT_APP_OKTA_ISSUER= <Enter your Okta issuer link>
+REACT_APP_OKTA_REDIRECT_URI= <Enter your Okta redirect URI (for local server enter http://localhost:3000/login/callback)>
+REACT_APP_API= <Enter your Back-End API link>
+```
+* If no OKTA account: refer to [https://developer.okta.com/](https://developer.okta.com/) to create and build application to manage user/admin account.
+* If no Back-End API you can use API of this project https://cardatabaseapi.herokuapp.com/api
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 5. Start the development server
+```
+npm start
+```
+
+### 6. Open your web browser and visit [http://localhost:3000](http://localhost:3000)
+
+## Screenshots
+
+ - Home Page
+ ![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499692/Car-Database_GITHUB/Home_mycjnw.png)
+ - Car List Page
+![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499691/Car-Database_GITHUB/Car-List_uu9onx.png)
+ - Car Detail Page (Login as User)
+![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499691/Car-Database_GITHUB/Car_Detail_e3jctt.png)
+ - Favorite List Page (Login as User)
+![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499691/Car-Database_GITHUB/Favorite-List_byxilq.png)
+ - Add Car Page (Login as Admin)
+![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499691/Car-Database_GITHUB/Add_Car_fgrecx.png)
+ - Edit Car Page (Login as Admin)
+![App Screenshot](https://res.cloudinary.com/doe9mfetd/image/upload/v1686499691/Car-Database_GITHUB/Edit_Car_szf1q5.png)
